@@ -1,0 +1,7 @@
+sudo airdecap-ng -w 12:34:56:78:90 lab3.cap
+
+grep -v '^[0-9]' rockyou.txt | sed -e 's/^./\U&/' -e 's/$/0/' | tee rockyou_mod.dic | wc -l
+
+
+hashcat -m 22000 -a 0 hand.hc22000 rockyou_mod.dic --potfile-path passwords.txt
+
